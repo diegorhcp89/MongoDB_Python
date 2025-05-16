@@ -2,12 +2,8 @@ from pymongo import MongoClient
 
 class DBConnectionHandler:
     def __init__(self) -> None:
-        self.__connection_string = 'mondodb://{}:{}@{}:{}/?authSource=admin'.format(
-            "",
-            "",
-            "localhost",
-            "27017"
-        )
+        # String de conexão SIMPLES (sem autenticação)
+        self.__connection_string = 'mongodb://localhost:27017'
         self.__database_name = "rocket_db"
         self.__client = None
         self.__db_connection = None

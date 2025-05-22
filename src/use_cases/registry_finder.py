@@ -22,6 +22,7 @@ class RegistryFinder:
         return order
 
     def __format__response(self, order: dict) -> HttpResponse :
+        order["_id"] = str(order["_id"])
         return HttpResponse(
             body={
                 "data": {
